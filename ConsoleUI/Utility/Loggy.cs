@@ -85,6 +85,8 @@ namespace ConsoleUI.Utility
                 var method = stack.GetMethod();
                 if (method.DeclaringType.Assembly != typeof(Log).Assembly
                     && method.DeclaringType.Name != "SerilogLogger"
+                    && method.DeclaringType.FullName != "Serilog.Core.Logger"
+                    && !method.DeclaringType.FullName.Contains("Autofac")
                     && method.DeclaringType.Assembly != typeof(Microsoft.Extensions.Logging.Logger<>).Assembly)
                 {
                     var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName))})";
