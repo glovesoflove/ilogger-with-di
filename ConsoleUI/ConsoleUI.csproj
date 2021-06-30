@@ -157,6 +157,8 @@
     <Compile Include="ContainerConfig.cs" />
     <Compile Include="IApplication.cs" />
     <Compile Include="IBusinessLogic.cs" />
+    <Compile Include="IProcessor.cs" />
+    <Compile Include="Numbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Bravo.cs" />

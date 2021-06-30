@@ -9,14 +9,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-
-
 namespace ConsoleUI.Utility
 {
     public class Logger : ILoggy
     {
         ILogger lug;
-
 
         public Logger()
         {
@@ -47,9 +44,6 @@ namespace ConsoleUI.Utility
             lug.Debug(s);
         }
 
-
-
-
         static void BuildConfig(IConfigurationBuilder builder)
         {
             builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -57,7 +51,6 @@ namespace ConsoleUI.Utility
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
                 .AddEnvironmentVariables();
         }
-
     }
 
     static class LoggerCallerEnrichmentConfiguration
@@ -83,15 +76,21 @@ namespace ConsoleUI.Utility
                 }
 
                 var method = stack.GetMethod();
-                if (method.DeclaringType.Assembly != typeof(Log).Assembly
-                    && method.DeclaringType.Name != "SerilogLogger"
-                    && method.DeclaringType.Assembly != typeof(Microsoft.Extensions.Logging.Logger<>).Assembly)
+                if (method.DeclaringType != null)
                 {
-                    var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName))})";
-                    logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue(caller)));
-                    return;
+                    if (method.DeclaringType.Assembly != typeof(Log).Assembly
+                        && method.DeclaringType.Name != "SerilogLogger"
+                        && method.DeclaringType.Name != "Logger"
+                        //&& method.DeclaringType.Name !=  "ConstructorParameterBinding"
+                        //&& method.DeclaringType.Name != "ReflectionActivator"
+                        && !method.DeclaringType.FullName.Contains("Autofac")
+                        && method.DeclaringType.Assembly != typeof(Microsoft.Extensions.Logging.Logger<>).Assembly)
+                    {
+                        var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName))})";
+                        logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue(caller)));
+                        return;
+                    }
                 }
-
                 skip++;
             }
         }

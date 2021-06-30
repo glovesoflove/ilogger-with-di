@@ -21,6 +21,15 @@ namespace ConsoleUI
             _dataAccess.LoadData();
             _dataAccess.SaveData("ProcessedInfo");
             _logger.LogDebug("Finished processing of the data.");
+
+            //intending to use a processor specific to (#issue1)
+            string t = "123";
+
+            IProcessor p = new Numbers();
+            //IProcessor p = new Letters();
+
+            p.Process(t);
+
             _logger.LogDebug("running Bravo");
             b.run(s);
 
