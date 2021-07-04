@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using ConsoleUI.Utility;
+using Microsoft.Extensions.Logging;
+using Serilog.Core;
 
 namespace ConsoleUI
 {
@@ -12,7 +14,7 @@ namespace ConsoleUI
             builder.RegisterType<Application>().As<IApplication>();
             builder.RegisterType<BusinessLogic>().As<IBusinessLogic>();
 
-            builder.RegisterType<Logger>().As<ILoggy>();
+            //builder.RegisterType<Logger>().As<ILogger>();
             builder.RegisterType<Bravo>().As<IBravo>();
             builder.RegisterType<DataAccess>().As<IDataAccess>();
 

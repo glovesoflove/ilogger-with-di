@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using ConsoleUI.Utility;
+using Microsoft.Extensions.Logging;
 using System;
 
 namespace ConsoleUI
@@ -8,13 +9,26 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             Console.WriteLine("main init");
-            var container = ContainerConfig.Configure();
-
-            using (var scope = container.BeginLifetimeScope())
+            string[] s = { "test test"};
+            ILoggerFactory _Factory = LoggerFactory.Create(builder =>
             {
-                var app = scope.Resolve<IApplication>();
-                app.Run(args);
+                builder.AddConsole();
+                builder.AddConsole();
             }
+                                                                      );
+            
+            ILogger _ILogger = _Factory.CreateLogger<Program>();
+            DataAccess da = new DataAccess(_ILogger);
+            var container = ContainerConfig.Configure();
+            Bravo b = new Bravo(_ILogger, da);
+            BusinessLogic BL = new BusinessLogic(_ILogger, da, b);
+            BL.ProcessData(s);
+
+            //using (var scope = container.BeginLifetimeScope())
+            //{
+            //    var app = scope.Resolve<IApplication>();
+            //    app.Run(args);
+            //}
 
             Console.ReadLine();
         }

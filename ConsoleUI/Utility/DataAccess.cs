@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ConsoleUI.Utility
 {
     public class DataAccess : IDataAccess
     {
-        ILoggy _logger;
-        public DataAccess(ILoggy logger)
+        ILogger _logger;
+        public DataAccess(ILogger logger)
         {
             _logger = logger;
         }

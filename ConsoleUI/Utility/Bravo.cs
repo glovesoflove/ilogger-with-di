@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ConsoleUI.Utility
 {
     public class Bravo : IBravo
     {
-        ILoggy _logger;
+        private readonly ILogger _logger;
         IDataAccess _dataAccess;
 
-        public Bravo(ILoggy logger, IDataAccess dataAccess)
+        public Bravo(ILogger logger, IDataAccess dataAccess)
         {
             _logger = logger;
             _dataAccess = dataAccess;
