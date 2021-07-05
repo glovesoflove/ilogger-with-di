@@ -9,29 +9,27 @@ namespace ConsoleUI
     {
         IDataAccess _dataAccess;
         IBravo b;
-        private readonly ILogger _logger;
+        private ILog Log;
 
-        public BusinessLogic(ILogger logger, IDataAccess dataAccess, IBravo b)
+        public BusinessLogic(IDataAccess dataAccess, IBravo b)
         {
-            _logger = logger;
+            Log = new ILog(this.GetType().ToString());
             _dataAccess = dataAccess;
             this.b = b;
         }
 
         public void ProcessData(string[] s)
         {
-            var st = new StackTrace();
-            var sf = st.GetFrame(0);
 
-            var currentMethodName = sf.GetMethod();
-            _logger.LogDebug("Class: " + this.GetType().ToString() + " Method: " + "[Method name]"+ "Starting the processing of data.");
-            _logger.LogInformation("Test Log...Wait!");
-            _logger.LogInformation("Class: " + this.GetType().ToString() + " Method: " + currentMethodName.ToString() + "Starting the processing of data.");
-            _logger.LogDebug("Starting the processing of data.");
+            Log.LogDebug("Starting the processing of data.");
+            Log.LogInfo("Test Log...Wait!");
+
+
+            Log.LogDebug("Starting the processing of data.");
             _dataAccess.LoadData();
             _dataAccess.SaveData("ProcessedInfo");
-            _logger.LogDebug("Finished processing of the data.");
-            _logger.LogDebug("running Bravo");
+            Log.LogDebug("Finished processing of the data.");
+            Log.LogDebug("running Bravo");
             b.run(s);
             
 

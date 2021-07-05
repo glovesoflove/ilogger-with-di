@@ -5,12 +5,12 @@ namespace ConsoleUI.Utility
 {
     public class Bravo : IBravo
     {
-        private readonly ILogger _logger;
+        private  ILog Log;
         IDataAccess _dataAccess;
 
-        public Bravo(ILogger logger, IDataAccess dataAccess)
+        public Bravo(IDataAccess dataAccess)
         {
-            _logger = logger;
+            Log = new ILog(this.GetType().ToString());
             _dataAccess = dataAccess;
         }
 

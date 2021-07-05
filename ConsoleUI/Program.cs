@@ -10,18 +10,10 @@ namespace ConsoleUI
         {
             Console.WriteLine("main init");
             string[] s = { "test test"};
-            ILoggerFactory _Factory = LoggerFactory.Create(builder =>
-            {
-                builder.AddConsole();
-                builder.AddConsole();
-            }
-                                                                      );
-            
-            ILogger _ILogger = _Factory.CreateLogger<Program>();
-            DataAccess da = new DataAccess(_ILogger);
+            DataAccess da = new DataAccess();
             var container = ContainerConfig.Configure();
-            Bravo b = new Bravo(_ILogger, da);
-            BusinessLogic BL = new BusinessLogic(_ILogger, da, b);
+            Bravo b = new Bravo(da);
+            BusinessLogic BL = new BusinessLogic(da, b);
             BL.ProcessData(s);
 
             //using (var scope = container.BeginLifetimeScope())

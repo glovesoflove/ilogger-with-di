@@ -5,22 +5,22 @@ namespace ConsoleUI.Utility
 {
     public class DataAccess : IDataAccess
     {
-        ILogger _logger;
-        public DataAccess(ILogger logger)
+        ILog Log;
+        public DataAccess()
         {
-            _logger = logger;
+            Log = new ILog(this.GetType().ToString());
         }
 
         public void LoadData()
         {
             Console.WriteLine("Loading Data");
-            _logger.LogDebug("Loading data");
+            Log.LogDebug("Loading data");
         }
 
         public void SaveData(string name)
         {
             Console.WriteLine($"Saving { name }");
-            _logger.LogDebug("Saving data");
+            Log.LogDebug("Saving data");
         }
     }
 }
