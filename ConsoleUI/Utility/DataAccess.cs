@@ -5,6 +5,7 @@ namespace ConsoleUI.Utility
     public class DataAccess : IDataAccess
     {
         ILoggy _logger;
+
         public DataAccess(ILoggy logger)
         {
             _logger = logger;
@@ -14,6 +15,9 @@ namespace ConsoleUI.Utility
         {
             Console.WriteLine("Loading Data");
             _logger.LogDebug("Loading data");
+
+            int i = 5;
+            _logger.LogDebug("i: " + i);
         }
 
         public void SaveData(string name)

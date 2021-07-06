@@ -22,11 +22,15 @@ namespace ConsoleUI
             _dataAccess.SaveData("ProcessedInfo");
             _logger.LogDebug("Finished processing of the data.");
 
-            //intending to use a processor specific to (#issue1)
+            //intending to use a processor specific to (#issue1) 
             string t = "123";
 
+            //(#strategy) 
             IProcessor p = new Numbers();
             //IProcessor p = new Letters();
+
+            //(ILogger with Dependency Injection #ilogger-di)
+            _logger.BkColor("Hello, {Name}! How are you {Today}? Pi is {Pi}", "World", "Today", 3.14159, LoggerExtensions.BackgroundBrightRed);
 
             p.Process(t);
 
