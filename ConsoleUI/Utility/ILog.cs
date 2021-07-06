@@ -26,22 +26,55 @@ namespace ConsoleUI.Utility
 
         public void LogDebug(params object[] msg)
         {
-            string message = "";
-            foreach(object o in msg)
+            string message;
+            if(msg.GetLength(0) - 1 > 0)
             {
-                message += o.ToString();
+                object[] args = new object[msg.GetLength(0) - 1];
+                Array.Copy(msg, 1, args, 0, msg.GetLength(0) - 1);
+                message = String.Format(msg[0].ToString(), args);
             }
+            else
+            {
+                message = msg[0].ToString();
+            }
+
             _ILogger.LogDebug("Class: " + ClassName + " Method: " + GetMethodName() + " " + message + ".");
         }
 
         public void LogInfo(params object[] msg)
         {
             string message = "";
-            foreach (object o in msg)
+            if (msg.GetLength(0) - 1 > 0)
             {
-                message += o.ToString();
+                object[] args = new object[msg.GetLength(0) - 1];
+                Array.Copy(msg, 1, args, 0, msg.GetLength(0) - 1);
+                message = String.Format(msg[0].ToString(), args);
+            }
+            else
+            {
+                message = msg[0].ToString();
             }
             _ILogger.LogInformation("Class: " + ClassName + " Method: " + GetMethodName() + " " + message + ".");
+        }
+
+        public void LogBkColor(params object[] msg)
+        {
+            string message = "";
+            if (msg.GetLength(0) - 1 > 0)
+            {
+                object[] args = new object[msg.GetLength(0) - 2];
+                Array.Copy(msg, 1, args, 0, msg.GetLength(0) - 2);
+                message = String.Format(msg[0].ToString(), args);
+            }
+            else
+            {
+                message = msg[0].ToString();
+            }
+            ConsoleColor CColor = Console.BackgroundColor;
+            Console.BackgroundColor = (ConsoleColor)msg[msg.GetLength(0) - 1];
+            _ILogger.LogInformation("Class: " + ClassName + " Method: " + GetMethodName() + " " + message + ".");
+
+           // Console.BackgroundColor = CColor;
         }
 
 

@@ -23,7 +23,8 @@ namespace ConsoleUI
 
             Log.LogDebug("Starting the processing of data.");
             Log.LogInfo("Test Log...Wait!");
-
+            Log.LogInfo("Format {0}", 10);
+            Log.LogBkColor("Format {0}", 10, ConsoleColor.Red);
 
             Log.LogDebug("Starting the processing of data.");
             _dataAccess.LoadData();
@@ -31,6 +32,8 @@ namespace ConsoleUI
             Log.LogDebug("Finished processing of the data.");
             Log.LogDebug("running Bravo");
             b.run(s);
+
+
             
 
         }
