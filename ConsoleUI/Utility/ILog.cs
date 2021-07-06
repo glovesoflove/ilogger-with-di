@@ -24,14 +24,24 @@ namespace ConsoleUI.Utility
         }
 
 
-        public void LogDebug(string msg)
+        public void LogDebug(params object[] msg)
         {
-            _ILogger.LogDebug("Class: " + ClassName + " Method: " + GetMethodName() + " " + msg + ".");
+            string message = "";
+            foreach(object o in msg)
+            {
+                message += o.ToString();
+            }
+            _ILogger.LogDebug("Class: " + ClassName + " Method: " + GetMethodName() + " " + message + ".");
         }
 
-        public void LogInfo(string msg)
+        public void LogInfo(params object[] msg)
         {
-            _ILogger.LogInformation("Class: " + ClassName + " Method: " + GetMethodName() + " " + msg + ".");
+            string message = "";
+            foreach (object o in msg)
+            {
+                message += o.ToString();
+            }
+            _ILogger.LogInformation("Class: " + ClassName + " Method: " + GetMethodName() + " " + message + ".");
         }
 
 
