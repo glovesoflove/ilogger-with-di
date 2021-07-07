@@ -3,9 +3,8 @@ using System;
 
 namespace ConsoleUI.Utility
 {
-    public class Bravo : IBravo
+    public class Bravo : ILogAbs, IBravo
     {
-        private  ILog Log;
         IDataAccess _dataAccess;
 
         public Bravo(IDataAccess dataAccess)

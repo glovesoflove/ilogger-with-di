@@ -3,9 +3,8 @@ using System;
 
 namespace ConsoleUI.Utility
 {
-    public class DataAccess : IDataAccess
+    public class DataAccess : ILogAbs, IDataAccess
     {
-        ILog Log;
         public DataAccess()
         {
             Log = new ILog(this.GetType().ToString());

@@ -5,11 +5,10 @@ using System.Diagnostics;
 
 namespace ConsoleUI
 {
-    public class BusinessLogic : IBusinessLogic
+    public class BusinessLogic : ILogAbs, IBusinessLogic
     {
         IDataAccess _dataAccess;
         IBravo b;
-        private ILog Log;
 
         public BusinessLogic(IDataAccess dataAccess, IBravo b)
         {

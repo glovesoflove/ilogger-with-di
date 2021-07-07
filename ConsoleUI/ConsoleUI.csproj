@@ -198,6 +198,7 @@
     <Compile Include="Utility\IBravo.cs" />
     <Compile Include="Utility\IDataAccess.cs" />
     <Compile Include="Utility\ILog.cs" />
+    <Compile Include="Utility\ILogAbs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

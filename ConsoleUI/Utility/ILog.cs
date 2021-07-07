@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI.Utility
 {
-    class ILog
+    public class ILog
     {
         ILogger _ILogger;
         string ClassName;
