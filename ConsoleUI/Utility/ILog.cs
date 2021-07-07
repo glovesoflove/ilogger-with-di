@@ -60,7 +60,7 @@ namespace ConsoleUI.Utility
         public void LogBkColor(params object[] msg)
         {
             string message = "";
-            if (msg.GetLength(0) - 1 > 0)
+            if (msg.GetLength(0) - 2 > 0)
             {
                 object[] args = new object[msg.GetLength(0) - 2];
                 Array.Copy(msg, 1, args, 0, msg.GetLength(0) - 2);

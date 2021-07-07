@@ -15,6 +15,8 @@ namespace ConsoleUI.Utility
         {
             Console.WriteLine("Loading Data");
             Log.LogDebug("Loading data");
+            int i = 5;
+            Log.LogDebug("i: " + i);
         }
 
         public void SaveData(string name)
