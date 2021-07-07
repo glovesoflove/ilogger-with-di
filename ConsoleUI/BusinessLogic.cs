@@ -12,7 +12,7 @@ namespace ConsoleUI
 
         public BusinessLogic(IDataAccess dataAccess, IBravo b)
         {
-            Log = new ILog(this.GetType().ToString());
+            _logger = new ILog(this.GetType().ToString());
             _dataAccess = dataAccess;
             this.b = b;
         }
@@ -20,15 +20,15 @@ namespace ConsoleUI
         public void ProcessData(string[] s)
         {
 
-            Log.LogDebug("Starting the processing of data.");
-            Log.LogInfo("Test Log...Wait!");
-            Log.LogInfo("Format {0}", 10);
-            Log.LogBkColor("Format {0}", 10, ConsoleColor.Red);
+            _logger.LogDebug("Starting the processing of data.");
+            _logger.LogInfo("Test Log...Wait!");
+            _logger.LogInfo("Format {0}", 10);
+            _logger.LogBkColor("Format {0}", 10, ConsoleColor.Red);
 
-            Log.LogDebug("Starting the processing of data.");
+            _logger.LogDebug("Starting the processing of data.");
             _dataAccess.LoadData();
             _dataAccess.SaveData("ProcessedInfo");
-            Log.LogDebug("Finished processing of the data.");
+            _logger.LogDebug("Finished processing of the data.");
             //intending to use a processor specific to (#issue1) 
             string t = "123";
 
@@ -38,11 +38,11 @@ namespace ConsoleUI
 
             //(ILogger with Dependency Injection #ilogger-di)
             //updated string to correct string formating
-            Log.LogBkColor("Hello, {0}! How are you {1}? Pi is {2}", "World", "Today", 3.14159, ConsoleColor.DarkRed);
+            _logger.LogBkColor("Hello, {0}! How are you {1}? Pi is {2}", "World", "Today", 3.14159, ConsoleColor.DarkRed);
 
             p.Process(t);
             p2.Process(t);
-            Log.LogDebug("running Bravo");
+            _logger.LogDebug("running Bravo");
             b.run(s);
 
 

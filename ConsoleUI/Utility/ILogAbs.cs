@@ -8,6 +8,6 @@ namespace ConsoleUI.Utility
 {
     public abstract class ILogAbs
     {
-        protected ILog Log;
+        protected ILog _logger;
     }
 }

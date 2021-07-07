@@ -7,21 +7,21 @@ namespace ConsoleUI.Utility
     {
         public DataAccess()
         {
-            Log = new ILog(this.GetType().ToString());
+            _logger = new ILog(this.GetType().ToString());
         }
 
         public void LoadData()
         {
             Console.WriteLine("Loading Data");
-            Log.LogDebug("Loading data");
+            _logger.LogDebug("Loading data");
             int i = 5;
-            Log.LogDebug("i: " + i);
+            _logger.LogDebug("i: " + i);
         }
 
         public void SaveData(string name)
         {
             Console.WriteLine($"Saving { name }");
-            Log.LogDebug("Saving data");
+            _logger.LogDebug("Saving data");
         }
     }
 }

@@ -9,7 +9,7 @@ namespace ConsoleUI.Utility
 
         public Bravo(IDataAccess dataAccess)
         {
-            Log = new ILog(this.GetType().ToString());
+            _logger = new ILog(this.GetType().ToString());
             _dataAccess = dataAccess;
         }
 
