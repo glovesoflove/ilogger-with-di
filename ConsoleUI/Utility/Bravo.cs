@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ConsoleUI.Utility
 {
-    public class Bravo : IBravo
+    public class Bravo : ILogAbs, IBravo
     {
-        ILoggy _logger;
         IDataAccess _dataAccess;
 
-        public Bravo(ILoggy logger, IDataAccess dataAccess)
+        public Bravo(IDataAccess dataAccess)
         {
-            _logger = logger;
+            _logger = new ILog(this.GetType().ToString());
             _dataAccess = dataAccess;
         }
 

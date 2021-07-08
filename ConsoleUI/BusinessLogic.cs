@@ -1,22 +1,30 @@
 ﻿using ConsoleUI.Utility;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Diagnostics;
 
 namespace ConsoleUI
 {
-    public class BusinessLogic : IBusinessLogic
+    public class BusinessLogic : ILogAbs, IBusinessLogic
     {
-        ILoggy _logger;
         IDataAccess _dataAccess;
         IBravo b;
 
-        public BusinessLogic(ILoggy logger, IDataAccess dataAccess, IBravo b)
+        public BusinessLogic(IDataAccess dataAccess, IBravo b)
         {
-            _logger = logger;
+            _logger = new ILog(this.GetType().ToString());
             _dataAccess = dataAccess;
             this.b = b;
         }
 
         public void ProcessData(string[] s)
         {
+
+            _logger.LogDebug("Starting the processing of data.");
+            _logger.LogInfo("Test Log...Wait!");
+            _logger.LogInfo("Format {0}", 10);
+            _logger.LogBkColor("Format {0}", 10, ConsoleColor.Red);
+
             _logger.LogDebug("Starting the processing of data.");
             _dataAccess.LoadData();
             _dataAccess.SaveData("ProcessedInfo");
@@ -27,6 +35,8 @@ namespace ConsoleUI
 
             //(#strategy) 
             IProcessor p = new Numbers();
+
+
             //IProcessor p = new Letters();
 
             //(ILogger with Dependency Injection #ilogger-di)
@@ -36,6 +46,9 @@ namespace ConsoleUI
 
             _logger.LogDebug("running Bravo");
             b.run(s);
+
+
+            
 
         }
     }
