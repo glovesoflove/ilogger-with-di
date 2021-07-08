@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using ConsoleUI.Utility;
+using Microsoft.Extensions.Logging;
 using System;
 
 namespace ConsoleUI

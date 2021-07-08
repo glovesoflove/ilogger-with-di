@@ -1,14 +1,18 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ConsoleUI.Utility
 {
-    public class DataAccess : IDataAccess
+    public class DataAccess : ILogAbs, IDataAccess
     {
+
+
         ILoggy _logger;
 
         public DataAccess(ILoggy logger)
+
         {
-            _logger = logger;
+            _logger = new ILog(this.GetType().ToString());
         }
 
         public void LoadData()
