@@ -1,6 +1,7 @@
-﻿using System;
+
 
 namespace ConsoleUI
+
 {
     class Numbers : IProcessor
     {
@@ -10,6 +11,7 @@ namespace ConsoleUI
 
         public bool Process(string s)
         {
+
             Console.WriteLine("Number Processing");
             return true;
         }

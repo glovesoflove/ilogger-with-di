@@ -5,18 +5,16 @@ using Serilog.Core;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-
-
 
 namespace ConsoleUI.Utility
 {
     public class Logger : ILoggy
     {
         ILogger lug;
-
 
         public Logger()
         {
@@ -51,9 +49,6 @@ namespace ConsoleUI.Utility
             lug.Debug(s);
         }
 
-
-
-
         static void BuildConfig(IConfigurationBuilder builder)
         {
             builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -61,7 +56,6 @@ namespace ConsoleUI.Utility
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
                 .AddEnvironmentVariables();
         }
-
     }
 
     static class LoggerCallerEnrichmentConfiguration
@@ -177,3 +171,6 @@ namespace ConsoleUI.Utility
         }
     }
 }
+
+
+

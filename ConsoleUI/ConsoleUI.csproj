@@ -189,7 +189,9 @@
     <Compile Include="IApplication.cs" />
     <Compile Include="IBusinessLogic.cs" />
     <Compile Include="IProcessor.cs" />
+
     <Compile Include="Letters.cs" />
+
     <Compile Include="Numbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
