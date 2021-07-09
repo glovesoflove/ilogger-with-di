@@ -1,33 +1,29 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 
 namespace ConsoleUI.Utility
 {
-    public class DataAccess : ILogAbs, IDataAccess
+    public class DataAccess : IDataAccess
     {
+        static ILoggy l;
 
-
-        ILoggy _logger;
-
-        public DataAccess(ILoggy logger)
-
+        public DataAccess(ILoggy l)
         {
-            _logger = new ILog(this.GetType().ToString());
+            DataAccess.l = l;
         }
 
         public void LoadData()
         {
             Console.WriteLine("Loading Data");
-            _logger.LogDebug("Loading data");
+            l.LogDebug("Loading data");
 
             int i = 5;
-            _logger.LogDebug("i: " + i);
+            l.LogDebug("i: " + i);
         }
 
         public void SaveData(string name)
         {
             Console.WriteLine($"Saving { name }");
-            _logger.LogDebug("Saving data");
+            l.LogDebug("Saving data");
         }
     }
 }

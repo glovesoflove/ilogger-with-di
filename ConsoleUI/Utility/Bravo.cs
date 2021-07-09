@@ -1,15 +1,22 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Serilog;
 using System;
 
 namespace ConsoleUI.Utility
 {
-    public class Bravo : ILogAbs, IBravo
+    public enum ESomeEnum
+    {
+        UseStrategyA,
+        UseStrategyB,
+    }
+
+    public class Bravo : IBravo
     {
         IDataAccess _dataAccess;
+        ILoggy log;
 
-        public Bravo(IDataAccess dataAccess)
+        public Bravo(ILoggy log, IDataAccess dataAccess)
         {
-            _logger = new ILog(this.GetType().ToString());
+            this.log = log;
             _dataAccess = dataAccess;
         }
 

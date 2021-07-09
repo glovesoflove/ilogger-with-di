@@ -1,60 +1,51 @@
-﻿using Microsoft.Extensions.Configuration;
-using Serilog;
+﻿using Serilog;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Serilog.Configuration;
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+
+
 
 namespace ConsoleUI.Utility
 {
-    public class Logger : ILoggy
+    public class Loggy : ILoggy
     {
-        ILogger lug;
+        static ILogger l;
+        static IConfiguration c;
 
-        public Logger()
+        public Loggy(IConfiguration c)
         {
-            var builder = new ConfigurationBuilder();
-            BuildConfig(builder);
+            Loggy.c = c;
+            var res = c.confroot();
+            {
+                Log.Logger = new LoggerConfiguration()
+                    .ReadFrom.Configuration(res)
+                    //.Enrich.FromLogContext()
+                    .Enrich.WithCaller()
+                    //.WriteTo.Console(theme: AnsiConsoleTheme.Code, outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message} (at {Caller}){NewLine}{Exception}")
+                    .CreateLogger();
 
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(builder.Build())
-                //.Enrich.FromLogContext()
-                .Enrich.WithCaller()
-                .WriteTo.Console(theme: AnsiConsoleTheme.Code, outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message} (at {Caller}){NewLine}{Exception}")
-                .CreateLogger();
+                //Log.Information("Logger Initialized");
+                //Log.Debug("Logger Initialized");
+                //Log.Error("Logger Initialized");
+                //Log.Logger.BkColor("Hello, {Name}! How are you {Today}? Pi is {Pi}", "World", "Today", 3.14159, LoggerExtensions.BackgroundBrightRed);
+                //Log.Logger.BkColor("Hello World", LoggerExtensions.BackgroundBrightGreen);
+                //Log.Logger.BkColor("Hello World. Today is {date}", DateTime.Now, LoggerExtensions.BackgroundBrightMagenta);
 
-            Log.Information("Logger Initialized");
-            Log.Debug("Logger Initialized");
-            Log.Error("Logger Initialized");
-            Log.Logger.BkColor("Hello, {Name}! How are you {Today}? Pi is {Pi}", "World", "Today", 3.14159, LoggerExtensions.BackgroundBrightRed);
-
-
-
-
-            lug = Log.Logger;
-        }
-
-        public void Logsy(string message)
-        {
-
+                l = Log.Logger;
+            }
         }
 
         public void LogDebug(string s)
         {
-            lug.Debug(s);
-        }
-
-        static void BuildConfig(IConfigurationBuilder builder)
-        {
-            builder.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
-                .AddEnvironmentVariables();
+            l.Debug(s);
         }
     }
 
@@ -88,8 +79,8 @@ namespace ConsoleUI.Utility
                         && method.DeclaringType.Name != "Logger"
                         //&& method.DeclaringType.Name !=  "ConstructorParameterBinding"
                         //&& method.DeclaringType.Name != "ReflectionActivator"
-                        && !method.DeclaringType.FullName.Contains("Autofac")
-                        && method.DeclaringType.Assembly != typeof(Microsoft.Extensions.Logging.Logger<>).Assembly)
+                        && !method.DeclaringType.FullName.Contains("Autofac"))
+                    //&& method.DeclaringType.Assembly != typeof(Microsoft.Extensions.Logging.Logger<>).Assembly)
                     {
                         var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName))})";
                         logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue(caller)));
@@ -171,6 +162,7 @@ namespace ConsoleUI.Utility
         }
     }
 }
+
 
 
 
