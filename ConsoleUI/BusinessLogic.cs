@@ -40,7 +40,7 @@ namespace ConsoleUI
             //IProcessor p = new Letters();
 
             //(ILogger with Dependency Injection #ilogger-di)
-            _logger.BkColor("Hello, {Name}! How are you {Today}? Pi is {Pi}", "World", "Today", 3.14159, LoggerExtensions.BackgroundBrightRed);
+            _logger.LogBkColor("Hello, {0}! How are you {1}? Pi is {2}", "World", "Today", 3.14159, ConsoleColor.Red);
 
             p.Process(t);
 

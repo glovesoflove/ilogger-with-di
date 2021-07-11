@@ -79,8 +79,6 @@ D:\UpWork\ilogger-with-di-master\ConsoleUI\bin\Debug\Microsoft.Extensions.Loggin
 D:\UpWork\ilogger-with-di-master\ConsoleUI\bin\Debug\Microsoft.Extensions.Logging.Console.xml
 D:\UpWork\ilogger-with-di-master\ConsoleUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 D:\UpWork\ilogger-with-di-master\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
-D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
-D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csproj.ConsoleUI.exe.config
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\appsettings.json
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\ConsoleUI.exe.config
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\ConsoleUI.exe
@@ -96,6 +94,7 @@ D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Configuration.Fil
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Configuration.Json.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.DependencyModel.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.FileProviders.Physical.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.dll
@@ -106,6 +105,7 @@ D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Logging.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Options.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Newtonsoft.Json.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Serilog.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Serilog.Extensions.Logging.dll
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Serilog.Settings.Configuration.dll
@@ -143,6 +143,7 @@ D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Logging.Console.x
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Options.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Options.ConfigurationExtensions.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Newtonsoft.Json.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Serilog.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Serilog.Extensions.Logging.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Serilog.Settings.Configuration.xml
@@ -158,5 +159,7 @@ D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.Text.Encodings.Web.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.Text.Json.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.ValueTuple.xml
+D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csproj.ConsoleUI.exe.config
 D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.exe
 D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.pdb

@@ -6,10 +6,7 @@ namespace ConsoleUI.Utility
     public class DataAccess : ILogAbs, IDataAccess
     {
 
-
-        ILoggy _logger;
-
-        public DataAccess(ILoggy logger)
+        public DataAccess()
 
         {
             _logger = new ILog(this.GetType().ToString());
