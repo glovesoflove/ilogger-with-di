@@ -186,6 +186,7 @@
     <Compile Include="Application.cs" />
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="ContainerConfig.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="IApplication.cs" />
     <Compile Include="IBusinessLogic.cs" />
     <Compile Include="IProcessor.cs" />
@@ -196,8 +197,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Bravo.cs" />
+    <Compile Include="Utility\Configuration.cs" />
     <Compile Include="Utility\DataAccess.cs" />
     <Compile Include="Utility\IBravo.cs" />
+    <Compile Include="Utility\IConfiguration.cs" />
     <Compile Include="Utility\IDataAccess.cs" />
     <Compile Include="Utility\ILog.cs" />
     <Compile Include="Utility\ILogAbs.cs" />

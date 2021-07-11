@@ -3,6 +3,12 @@ using System;
 
 namespace ConsoleUI.Utility
 {
+    public enum ESomeEnum
+    {
+        UseStrategyA,
+        UseStrategyB,
+    }
+
     public class Bravo : ILogAbs, IBravo
     {
         IDataAccess _dataAccess;

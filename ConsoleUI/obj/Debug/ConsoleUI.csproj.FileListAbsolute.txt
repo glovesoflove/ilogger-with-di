@@ -79,10 +79,10 @@ D:\UpWork\ilogger-with-di-master\ConsoleUI\bin\Debug\Microsoft.Extensions.Loggin
 D:\UpWork\ilogger-with-di-master\ConsoleUI\bin\Debug\Microsoft.Extensions.Logging.Console.xml
 D:\UpWork\ilogger-with-di-master\ConsoleUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 D:\UpWork\ilogger-with-di-master\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
-D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\ConsoleUI.exe.config
-D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.exe
-D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.pdb
+D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csproj.ConsoleUI.exe.config
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\appsettings.json
+D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\ConsoleUI.exe.config
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\ConsoleUI.exe
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\ConsoleUI.pdb
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\Autofac.dll
@@ -158,5 +158,5 @@ D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.Text.Encodings.Web.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.Text.Json.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\UpWork\iloggerfork\ConsoleUI\bin\Debug\System.ValueTuple.xml
-D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
-D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.csproj.ConsoleUI.exe.config
+D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.exe
+D:\UpWork\iloggerfork\ConsoleUI\obj\Debug\ConsoleUI.pdb
