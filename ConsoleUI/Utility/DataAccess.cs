@@ -3,13 +3,13 @@ using System;
 
 namespace ConsoleUI.Utility
 {
-    public class DataAccess : ILogAbs, IDataAccess
+    public class DataAccess : IDataAccess
     {
-
+        ILog _logger;
         public DataAccess()
-
         {
-            _logger = new ILog(this.GetType().ToString());
+            ILogFactory LogFactory = new ILogFactory();
+            _logger = LogFactory.GetILog();
         }
 
         public void LoadData()

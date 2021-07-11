@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI.Utility
 {
-    public abstract class ILogAbs
+    class ILogFactory
     {
-        protected ILog _logger;
+        public ILog GetILog()
+        {
+            return new ILog();
+        }
     }
 }

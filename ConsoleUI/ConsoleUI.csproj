@@ -190,9 +190,7 @@
     <Compile Include="IApplication.cs" />
     <Compile Include="IBusinessLogic.cs" />
     <Compile Include="IProcessor.cs" />
-
     <Compile Include="Letters.cs" />
-
     <Compile Include="Numbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,7 +201,7 @@
     <Compile Include="Utility\IConfiguration.cs" />
     <Compile Include="Utility\IDataAccess.cs" />
     <Compile Include="Utility\ILog.cs" />
-    <Compile Include="Utility\ILogAbs.cs" />
+    <Compile Include="Utility\ILogFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

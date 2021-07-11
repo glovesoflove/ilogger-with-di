@@ -9,13 +9,15 @@ namespace ConsoleUI.Utility
         UseStrategyB,
     }
 
-    public class Bravo : ILogAbs, IBravo
+    public class Bravo : IBravo
     {
         IDataAccess _dataAccess;
+        ILog _logger;
 
         public Bravo(IDataAccess dataAccess)
         {
-            _logger = new ILog(this.GetType().ToString());
+            ILogFactory LogFactory = new ILogFactory();
+            _logger = LogFactory.GetILog();
             _dataAccess = dataAccess;
         }
 
