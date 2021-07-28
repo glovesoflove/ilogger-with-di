@@ -10,11 +10,11 @@ namespace ConsoleUI
         IDataAccess _dataAccess;
         IBravo b;
         ILog _logger;
+        LogFactory LoggerFactory = new LogFactory();
 
         public BusinessLogic(IDataAccess dataAccess, IBravo b)
         {
-            ILogFactory LogFactory = new ILogFactory();
-            _logger = LogFactory.GetILog();
+            _logger = LoggerFactory.GetILog();
             _dataAccess = dataAccess;
             this.b = b;
         }

@@ -6,10 +6,11 @@ namespace ConsoleUI.Utility
     public class DataAccess : IDataAccess
     {
         ILog _logger;
+        LogFactory LoggerFactory = new LogFactory();
         public DataAccess()
         {
-            ILogFactory LogFactory = new ILogFactory();
-            _logger = LogFactory.GetILog();
+            
+            _logger = LoggerFactory.GetILog();
         }
 
         public void LoadData()

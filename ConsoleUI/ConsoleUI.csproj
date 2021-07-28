@@ -201,7 +201,7 @@
     <Compile Include="Utility\IConfiguration.cs" />
     <Compile Include="Utility\IDataAccess.cs" />
     <Compile Include="Utility\ILog.cs" />
-    <Compile Include="Utility\ILogFactory.cs" />
+    <Compile Include="Utility\LogFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI.Utility
 {
-    class ILogFactory
+    class LogFactory
     {
         public ILog GetILog()
         {

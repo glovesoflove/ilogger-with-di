@@ -13,11 +13,11 @@ namespace ConsoleUI.Utility
     {
         IDataAccess _dataAccess;
         ILog _logger;
+        LogFactory LoggerFactory = new LogFactory();
 
         public Bravo(IDataAccess dataAccess)
         {
-            ILogFactory LogFactory = new ILogFactory();
-            _logger = LogFactory.GetILog();
+            _logger = LoggerFactory.GetILog();
             _dataAccess = dataAccess;
         }
 
